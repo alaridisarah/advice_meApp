@@ -1,3 +1,4 @@
+import 'package:adviceme/screens/selection_screen.dart';
 import 'package:adviceme/utils/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,48 +10,62 @@ class home_screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var _screenSize = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: background_color,
-      body: Center(
-        child: Stack(alignment: Alignment.center, children: [
-          Container(
-            height: _screenSize.height * 0.23,
-            width: _screenSize.width * 0.92,
-            decoration: BoxDecoration(
-                color: contaier_color,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 29, 28, 28),
-                    offset: const Offset(
-                      5.0,
-                      5.0,
-                    ),
-                    blurRadius: 15.0,
-                    spreadRadius: 2.0,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: background_color,
+        body: Center(
+          child: Stack(alignment: Alignment.center, children: [
+            Container(
+              height: _screenSize.height * 0.23,
+              width: _screenSize.width * 0.92,
+              decoration: BoxDecoration(
+                  color: contaier_color,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
                   ),
-                ]),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 50,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 29, 28, 28),
+                      offset: const Offset(
+                        5.0,
+                        5.0,
+                      ),
+                      blurRadius: 15.0,
+                      spreadRadius: 2.0,
+                    ),
+                  ]),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 70,
+                  ),
+                  Text("ADVICE ME!", style: head_font)
+                ],
+              ),
+            ),
+            Column(children: [
+              SizedBox(
+                height: _screenSize.height * 0.56,
+              ),
+              InkWell(
+                child: Image.asset(
+                  'assets/button_start.png',
+                  height: 64,
+                  width: 64,
                 ),
-                Text("ADVICE ME!", style: head_font)
-              ],
-            ),
-          ),
-          Column(children: [
-            SizedBox(
-              height: _screenSize.height * 0.56,
-            ),
-            InkWell(
-              child: Image.asset('assets/button_start.png'),
-              onTap: () {},
-            )
-          ])
-        ]),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => selection_screen(
+                              page: 0,
+                            )),
+                  );
+                },
+              )
+            ])
+          ]),
+        ),
       ),
     );
   }
