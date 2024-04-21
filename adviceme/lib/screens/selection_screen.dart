@@ -126,18 +126,22 @@ class _selection_screenState extends State<selection_screen> {
                             )),
                   );
                 } else {
-                  String Prompt =
-                      "I'm seeking ${advice[selectedCategory]}, specifically for ${audience[selectedAudence]}. Can you give me some cool advice?";
-                  String response =
-                      await ChatGPTApiService().getChatResponse(Prompt);
-                  print(response);
-                  // if (!response.isEmpty) {
-                  //   Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) =>
-                  //               advice_screen(response: response)));
-                  // }
+                  /////////////////////// THIS IS the comment is how to work with chagpt api
+                  // String Prompt =
+                  //     "I'm seeking ${advice[selectedCategory]}, specifically for ${audience[selectedAudence]}. Can you give me some cool advice? Make it clear and concise";
+                  // String response =
+                  //     await ChatGPTApiService().getChatResponse(Prompt);
+                  // print(response);
+                  ///////////////////// this is 2 line one example of the output of the response
+                  List<String> lines = response.split('\n');
+                  String? stringWithoutFirstLine = lines.sublist(2).join('\n');
+
+                  //////////
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              advice_screen(response: stringWithoutFirstLine)));
                 }
               })
         ]),

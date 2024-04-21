@@ -30,3 +30,10 @@ TextStyle options_font = GoogleFonts.getFont("Manrope",
       fontWeight: FontWeight.normal,
       color: Colors.white,
     ));
+
+TextStyle advice_font = GoogleFonts.getFont("Manrope",
+    textStyle: TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w600,
+      color: text_color2,
+    ));
