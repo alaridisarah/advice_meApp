@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
 
 class ChatGPTApiService {
-  final String apiKey =
-      'sk-proj-qFmKjMlD7SyyQkUM3uiwT3BlbkFJolIaq6Q7FnKJh8hvHw8N';
+  final String apiKey = 'YOU_API_KEY';
   final String endpoint =
       'https://api.openai.com/v1/engines/text-davinci-003/completions';
 
