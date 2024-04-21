@@ -2,8 +2,7 @@ import 'package:dio/dio.dart';
 
 class ChatGPTApiService {
   final String apiKey = 'YOU_API_KEY';
-  final String endpoint =
-      'https://api.openai.com/v1/engines/text-davinci-003/completions';
+  final String endpoint = 'CHATGPT_LINK';
 
   Future<String> getChatResponse(String prompt) async {
     try {
