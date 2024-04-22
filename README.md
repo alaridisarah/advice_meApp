@@ -27,7 +27,7 @@ To install the required dependencies for the Flutter project.
 ```bash
 flutter pub get
 ```
-**NOTE**: ```you must edit "adviceme/lib/data/chatgptAPI.dart" this fill by the link of chatgptapi and your key. ```
+**NOTE**: ```you must edit "adviceme/lib/data/chatgptAPI.dart" this file by the link of chatgptapi and your key. ```
 
 Run the App:
 Connect your device or use an emulator/simulator.
